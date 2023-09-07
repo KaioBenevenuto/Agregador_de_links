@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*
+  box-sizing - Faz com que a medida seja feita apartir da borda da caixa, ou seja, mesmo depois de prencher a caixa a borda lateral dela continuará com o tamanho que foi determinado
+  */
+  box-sizing: border;
+}
+body {
+  /*
+  background-image: url("./assets/bg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+*/
+/*background - color, image, repeat, position/size*/
+background: url(assets/bg-mobile.jpg) no-repeat center top / cover;
+}
+body *{
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+#container{
+  width: 360px;
+  /*
+  margin-top: 56px;   | top     =  cima
+  margin-right: auto; | right   =  direita
+  margin-bottom: 0;   | bottom  =  baixo 
+  margin-left: auto;  | left    =  esquerda 
+  */
+  margin: 56px auto 0px;
+}
+/*Profile -------------------------------*/
+#profile{
+  text-align: center;
+  padding: 24px;
+}
+#profile img{
+  width: 112px;
+  /*
+  margin: auto;
+  display: block;
+  Em elementos inline não é possível utilizar o "margin: auto;"
+  */
+}
+#profile p{
+  font-weight: 500;
+  /*line-height - Modifica a altura de linha*/
+  line-height: 24px;
+  padding-top: 8px;
+}
+/*Links -------------------------------*/
+ul{
+  list-style: none;
+}
+ul li a{
+  /*display: flex; - é usado para posicionar as caixas dentro de uma caixa*/
+  display: flex;
+  border: 1px solid red;
+  /*justify-content: center; - centraliza o conteúdo dentro da caixa, não funciona sem display flex, pois no deisplay flex as caixas tem uma linha virtual que passa no meio "vertical" delas
+  */
+  justify-content: center;
+  /*
+  align-items: center; - alinha os itens no centro, não funciona sem display flex, pois no deisplay flex as caixas tem uma linha virtual que passa no meio "horizontal" delas
+  */
+  align-items: center;
+  padding: 16px 24px;
+  /*
+  gap: 8px; - faz com que os conteudos dentro dessa caixa tenha um espaço entre eles
+  display: none; é uma propriedade CSS que oculta um elemento da página
+  */
+}
