@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   /*
@@ -12,16 +12,40 @@ body {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-*/
-/*background - color, image, repeat, position/size*/
-background: url(assets/bg-mobile.jpg) no-repeat center top / cover;
+  
+  background - color, image, repeat, position/size*/
+  background: var(--bg-url) no-repeat center top / cover;
 }
-body *{
-  font-family: 'Inter', sans-serif;
-  color: white;
+:root{
+  /*Ps: o --text-color está sendo aplicado tanto na cor da fonte quanto na cor da borda-hover*/
+  --text-color: white;
+  /*imagem de fundo*/
+  --bg-url: url(assets/bg-mobile.jpg);
+  /*cor do background*/
+  --surface-color: rgba(255, 255, 255, 0.1);
+  /*cor da borda*/
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  /*cor do background-hover*/
+  --surface-color-hover:rgba(255, 255, 255, 0.05);
+  /*cor do background do social-link*/
+  --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
-#container{
+.light{
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --stroke-color: rgba(0, 0, 0, 0.50);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
   width: 360px;
   /*
   margin-top: 56px;   | top     =  cima
@@ -30,13 +54,14 @@ body *{
   margin-left: auto;  | left    =  esquerda 
   */
   margin: 56px auto 0px;
+  padding: 0 24px;
 }
 /*Profile -------------------------------*/
-#profile{
+#profile {
   text-align: center;
   padding: 24px;
 }
-#profile img{
+#profile img {
   width: 112px;
   /*
   margin: auto;
@@ -44,30 +69,83 @@ body *{
   Em elementos inline não é possível utilizar o "margin: auto;"
   */
 }
-#profile p{
+#profile p {
   font-weight: 500;
   /*line-height - Modifica a altura de linha*/
   line-height: 24px;
   padding-top: 8px;
 }
 /*Links -------------------------------*/
-ul{
-  list-style: none;
-}
-ul li a{
+ul {
   /*display: flex; - é usado para posicionar as caixas dentro de uma caixa*/
   display: flex;
-  border: 1px solid red;
-  /*justify-content: center; - centraliza o conteúdo dentro da caixa, não funciona sem display flex, pois no deisplay flex as caixas tem uma linha virtual que passa no meio "vertical" delas
-  */
-  justify-content: center;
+  flex-direction: column;
+  /*gap: 8px; - faz com que os conteudos dentro dessa caixa tenha um espaço entre eles*/
+  gap: 16px;
+  
+  list-style: none;
+  padding: 24px 0;;
+}
+ul li a {
+  display: flex;
   /*
   align-items: center; - alinha os itens no centro, não funciona sem display flex, pois no deisplay flex as caixas tem uma linha virtual que passa no meio "horizontal" delas
   */
   align-items: center;
-  padding: 16px 24px;
   /*
-  gap: 8px; - faz com que os conteudos dentro dessa caixa tenha um espaço entre eles
+  justify-content: center; - centraliza o conteúdo dentro da caixa, não funciona sem display flex, pois no deisplay flex as caixas tem uma linha virtual que passa no meio "vertical" delas
+  */
+  justify-content: center;
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  /*backdrop-filter: blur(4px); - deixa o fundo imbaçado*/
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  /*text-decoration - coloca linhas em uma determinada posição ou as tiram do texto*/
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+  /*
+  Outras propriedades que não foram usadas:
   display: none; é uma propriedade CSS que oculta um elemento da página
   */
+}
+/*
+ul li a:hover{} - pseudo select faz uma caixa ter outra configuração quando o mouse passa por cima, por exemplo outra cor de fundo e tamanho de borda
+*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+/*Social links -------------------------------*/
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+  font-size: 24px;
+}
+#social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover{
+  background-color: var(--highlight-color); 
+}
+/*Rodapé -------------------------------*/
+footer{
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
 }
