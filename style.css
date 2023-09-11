@@ -29,6 +29,8 @@ body {
   --surface-color-hover:rgba(255, 255, 255, 0.05);
   /*cor do background do social-link*/
   --highlight-color: rgba(255, 255, 255, 0.2);
+  /*imagem do switch*/
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light{
@@ -38,6 +40,7 @@ body {
   --stroke-color: rgba(0, 0, 0, 0.50);
   --surface-color-hover:rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body * {
@@ -74,6 +77,53 @@ body * {
   /*line-height - Modifica a altura de linha*/
   line-height: 24px;
   padding-top: 8px;
+}
+/*Switch -------------------------------*/
+#switch{
+  /*
+  position: relative; - no meu github na pasta Projetos-CSS/Posicionamento, explixa melhor como ele funciona 
+  */
+  position: relative;
+  width: 64px;
+  /*
+  margin: 0 auto; - um metodo muito uzado para centralizar elementos do tipo block, é no margin, colocar um valor fixo para altura e um valor automatico para largura 
+  */
+  margin: 4px auto;
+}
+#switch button{
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+  left: 0;
+  /*position: absolute; - faz uma sobreposição de camadas*/
+  position: absolute;
+  /*
+  z-index - no meu github na pasta Projetos-CSS/Posicionamento, explixa melhor como ele funciona
+  */
+  z-index: 1;
+  top: 50%;
+  /*
+  transform - aceita um monte de propriedade de transformação de elemento
+  translateY() - é uma propriedade de tranformação que pode ser usada no transform, ela mexe na posição do elemento no eixo Y
+  */
+  transform: translateY(-50%);
+}
+.light #switch button{
+  right: 0;
+  /*left: initial; - volta o left para o seu valor inicial*/
+  left: initial;
+}
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 /*Links -------------------------------*/
 ul {
