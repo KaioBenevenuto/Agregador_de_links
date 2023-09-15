@@ -121,6 +121,7 @@ body * {
   height: 24px;
   border-radius: 999px;
   border: 1px solid var(--stroke-color);
+
   background: var(--surface-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
