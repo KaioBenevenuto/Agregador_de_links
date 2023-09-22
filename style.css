@@ -4,7 +4,7 @@
   /*
   box-sizing - Faz com que a medida seja feita apartir da borda da caixa, ou seja, mesmo depois de prencher a caixa a borda lateral dela continuará com o tamanho que foi determinado
   */
-  box-sizing: border;
+  box-sizing: border-box;
 }
 body {
   /*
@@ -113,7 +113,7 @@ body * {
   translateY() - é uma propriedade de tranformação que pode ser usada no transform, ela mexe na posição do elemento no eixo Y
   */
   transform: translateY(-50%);
-  
+
   /*animation - se refere animação criada no @keyframes*/
   animation: slide-back 0.2s;
 }
