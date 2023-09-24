@@ -20,13 +20,13 @@ function toggleMode() {
     img.setAttribute("src", "assets/avatar-light.png")
     img.setAttribute(
       "alt",
-      "Foto de Mayk Brito sorrindo, usando óculos escuros e jaqueta preta, sem barba e com o fundo meio roxo e meio azulado"
+      "Foto do Kaio, com camisa cinza, barba e fundo meio ciano e meio avermelhado"
     )
   } else {
     img.setAttribute("src", "assets/avatar.png")
     img.setAttribute(
       "alt",
-      "Foto de Mayk Brito sorrindo, usando óculos e camisa preta, barba e fundo amarelo"
+      "Foto do Kaio, com camisa preta, barba e fundo meio roxo e meio azulado"
     )
   }
 }
